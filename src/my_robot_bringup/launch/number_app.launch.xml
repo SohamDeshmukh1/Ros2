@@ -1,0 +1,18 @@
+<launch>
+ <node pkg ="my_cpp" exec="number_publisher" name="my_number_publisher" >
+    <remap from ="/Numbers" to ="/my_number"/> 
+    <!-- <param name="" value""/>  this line can help us change the param name we give me cmd to make it easy at runtime
+if we want --> 
+<!-- <param name="timer_period" value="2.5"/>
+<param name="counter_" value="5"/> -->
+
+    <param from="$(find-pkg-share my_robot_bringup)/config/number_app.yaml"/>
+
+</node>
+ <node pkg ="my_cpp" exec="number_counter" name="my_number_counter">   
+    <remap from ="/Numbers" to ="/my_number"/>
+        <!-- we remap means at the time of execution we dont need to do
+    ros2 run my_cpp numbe_publisher -ros-args -r __node:="changing the node name" -r oldnodename:=newnodename -->
+    <!-- we can directly do ros2 launch folder/directory name.xml in this case (number_app.launch.xml) -->
+</node>
+</launch>

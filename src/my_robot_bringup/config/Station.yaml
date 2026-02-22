@@ -1,0 +1,20 @@
+/robot_new_station_giskard:
+  ros__parameters:
+    Robot_name: "giskard"
+
+/robot_new_station_bb8:
+  ros__parameters:
+    Robot_name: "bb8"
+
+/robot_new_station_daneel:
+  ros__parameters:
+    Robot_name: "daneel"
+
+/robot_new_station_jander:
+  ros__parameters:
+    Robot_name: "jander"
+
+/robot_new_station_c3po:
+  ros__parameters:
+    Robot_name: "c3po"
+

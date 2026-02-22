@@ -1,0 +1,4 @@
+/my_number_publisher:
+  ros__parameters:
+    counter_: 10
+    timer_period: 2.5

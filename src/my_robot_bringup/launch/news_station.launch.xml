@@ -1,0 +1,33 @@
+<launch>
+<node pkg = "my_cpp"  exec="robot_new_station" name="robot_new_station_giskard">
+    <remap from ="/Robot_News" to="/robot_news" />
+    <param from="$(find-pkg-share my_robot_bringup)/config/Station.yaml"/>
+</node>
+
+<node pkg = "my_cpp"  exec="robot_new_station" name="robot_new_station_bb8">
+    <remap from ="/Robot_News" to="/robot_news" />
+    <param from="$(find-pkg-share my_robot_bringup)/config/Station.yaml"/>
+</node>
+
+<node pkg = "my_cpp"  exec="robot_new_station" name="robot_new_station_daneel">
+    <remap from ="/Robot_News" to="/robot_news" />
+    <param from="$(find-pkg-share my_robot_bringup)/config/Station.yaml"/>
+</node>
+
+<node pkg = "my_cpp"  exec="robot_new_station" name="robot_new_station_jander">
+    <remap from ="/Robot_News" to="/robot_news" />
+    <param from="$(find-pkg-share my_robot_bringup)/config/Station.yaml"/>
+</node>
+
+<node pkg = "my_cpp"  exec="robot_new_station" name="robot_new_station_c3po">
+    <remap from ="/Robot_News" to="/robot_news" />
+    <param from="$(find-pkg-share my_robot_bringup)/config/Station.yaml"/>
+</node>
+
+<node pkg = "my_cpp"  exec="smartphone" name="smartphone">
+    <remap from ="/Robot_News" to="/robot_news" />
+    <param from="$(find-pkg-share my_robot_bringup)/config/Station.yaml"/>
+</node>
+
+
+</launch>

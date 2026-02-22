@@ -1,0 +1,18 @@
+# ROS 2
+build/
+install/
+log/
+
+# Colcon
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
