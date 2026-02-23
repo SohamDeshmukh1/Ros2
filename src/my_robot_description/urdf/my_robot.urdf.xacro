@@ -5,5 +5,4 @@
     <xacro:include filename="mobile_base.xacro" />
     <!-- the rpy works in radiance basically everything which works in degrees works in radiance -->
     <!-- Every Measurement is done in Meters and not CMs MM or Kms -->
-
    </robot>
