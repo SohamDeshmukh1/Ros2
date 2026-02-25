@@ -71,4 +71,48 @@ colcon build --symlink-install
 
 # Source workspace
 source install/setup.bash
+```
+## Topics
 
+``` bash 
+# Tells about current active topics
+ros2 topic list
+```
+
+
+``` bash 
+# Tells info about the package
+ros2 topic info /topic_name
+```
+
+``` bash 
+# Echos Package runtime output
+ros2 topic echo /topic_name
+```
+
+
+```bash
+# Publish data to a topic
+ros2 topic pub /topic_name < msg_type > "{field: value}"
+```
+
+Example:
+
+```bash
+ros2 topic pub /chatter std_msgs/msg/String "{data: 'Hello ROS 2'}"
+```
+
+```bash
+ros2 topic list -t
+# will return the same list of topics, this time with the topic type appended in brackets:
+```
+Example:
+
+```bash
+ros2 topic list -t
+/parameter_events [rcl_interfaces/msg/ParameterEvent]
+/rosout [rcl_interfaces/msg/Log]
+/turtle1/cmd_vel [geometry_msgs/msg/Twist]
+/turtle1/color_sensor [turtlesim/msg/Color]
+/turtle1/pose [turtlesim/msg/Pose]
+```
