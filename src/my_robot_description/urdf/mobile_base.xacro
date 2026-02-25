@@ -19,6 +19,13 @@
                 <origin xyz="0 0 0" rpy="1.5708 0 0" />
                 <material name = "red" />
             </visual>
+            <collision>
+                <geometry>
+                    <sphere radius="${wheel_radius}" />
+                    <origin xyz="0 0 0" rpy="0 0 0" />
+                </geometry>
+            </collision>
+            <xacro:wheel_inertia m="2.0" o_xyz="0 0 0" o_rpy="1.5708 0 0" r="${wheel_radius}" h="${wheel_length}" />
         </link>
     </xacro:macro>
 
@@ -28,11 +35,16 @@
                 <!-- Metric system is used in urdf ros -->
                 <box size="${base_length} ${base_width} ${base_height}"/>
                 <!--  length , width , height in meters-->
-            </geometry>
-            <!-- rpy is roll,pitch,yaw -->
+            </geometry>            <!-- rpy is roll,pitch,yaw -->
             <origin xyz="0 0 0.1" rpy="0 0 0" />
             <material name = "blue" />
         </visual>
+        <collision>
+            <geometry>
+                <box size="${base_length} ${base_width} ${base_height}"/>
+            </geometry>
+            <origin xyz="0 0 0.1" rpy="0 0 0" />
+        </collision>
         <xacro:box_inertia m="5.0" o_xyz="0 0 0.1" o_rpy="0 0 0" x="${base_length}" y="${base_width}" z="${base_height}"/>
     </link>
     <link name="footprint">
@@ -49,7 +61,13 @@
             </geometry>
             <material name="green" />
         </visual>
-        <xacro:sphere_interia m="1.0" o_xyz="0 0 0" o_rpy="0 0 0" r="0.05"/>
+        <collision>
+            <geometry>
+                <sphere radius="0.05" />
+                <origin xyz="0 0 0" rpy="0 0 0" />
+            </geometry>
+        </collision>
+        <xacro:sphere_inertia m="1.0" o_xyz="0 0 0" o_rpy="0 0 0" r="0.05"/>
     </link>
 
 

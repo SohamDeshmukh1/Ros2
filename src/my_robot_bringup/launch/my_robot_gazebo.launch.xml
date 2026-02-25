@@ -1,0 +1,17 @@
+<launch>
+    <let name ="urdf_path" value ="$(find-pkg-share my_robot_description)/urdf/my_robot.urdf.xacro"/>
+    <let name ="rviz_confg" value ="$(find-pkg-share my_robot_description)/rviz/test1.rviz"/>
+
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="robot_description" 
+                value="$(command 'xacro $(my_robot)')"/>
+    </node>
+
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+        <args name="gz_args" value="empty.sdf -r"/>
+    </include>
+
+    <node pkg="ros_gz_sim" exec="create" args="-topic robot_description"/>
+    <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_confg)" output="screen"/>
+
+</launch>
