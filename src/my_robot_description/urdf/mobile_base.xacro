@@ -45,9 +45,7 @@
         </collision>
         <xacro:box_inertia m="5.0" o_xyz="0 0 0.1" o_rpy="0 0 0" x="${base_length}" y="${base_width}" z="${base_height}"/>
     </link>
-    <link name="footprint">
-    </link>
-
+    <link name="base_footprint" ></link>
     <xacro:wheel_link prefix="right"/>
     <xacro:wheel_link prefix="left"/>
 
@@ -70,12 +68,12 @@
 
 
     <joint name="base_joint" type="fixed">
-        <parent link="footprint" />
+        <parent link="base_footprint" />
         <child link="base_link" />
         <origin xyz="0 0 ${wheel_radius}" rpy="0 0 0" />
     </joint>
 
-    <joint name="base_sphere_joint" type="continuous">
+    <joint name="base_sphere_joint" type="fixed">
         <parent link="base_link" />
         <child link="sphere_link" />
         <origin xyz="0.2 0 -0.05" rpy="0 0 0" />

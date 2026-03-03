@@ -1,12 +1,6 @@
 <?xml version="1.0"?>
 <robot name="mesh_robot" xmlns:xacro="https://www.ros.org/wiki/xacro">
 
-            <!-- Name comes from same github repo 
-                        at the end of file type cc the name is avaliable -->
-            <!-- The name gz-sim-diff-drive-system came from the gz-sim github repo
-                gz-sim is compulsory system is compulsoly just we need to 
-                put the name like this  -->
-
     <gazebo reference="sphere_link">
         <mu1 value="0.1"/>
         <mu2 value="0.1"/>
@@ -19,7 +13,7 @@
                 <wheel_separation>0.45</wheel_separation>
                 <wheel_radius>0.1</wheel_radius>
                 <frame_id>odom</frame_id>
-                <child_frame_id>footprint</child_frame_id>
+                <child_frame_id>base_footprint</child_frame_id>
         </plugin>
     </gazebo>
 
