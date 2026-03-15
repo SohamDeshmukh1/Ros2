@@ -179,8 +179,9 @@ Basic Launch Files
 </launch>
 ```
 
+Gazeebo Empty Launch File
+
 ```bash
-#Gazeebo Launch File 
 
 <launch>
     <let name ="urdf_path" value ="$(find-pkg-share my_robot_description)/urdf/my_robot.urdf.xacro"/>
@@ -198,5 +199,39 @@ Basic Launch Files
     <node pkg="ros_gz_sim" exec="create" args="-topic robot_description"/>
     <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_confg)" output="screen"/>
 
+</launch>
+```
+Gazeebo Launch File with Ros sim Bridge
+
+```bash
+<launch>
+    <let name="urdf_path" 
+        value="$(find-pkg-share my_robot_description)/urdf/my_robot.urdf.xacro"/>
+    <let name="rviz_config_path"
+        value="$(find-pkg-share my_robot_description)/rviz/test1.rviz"/>
+    <let name="gazeebo_config_path"
+        value="$(find-pkg-share my_robot_bringup)/config/gazeebo_bridge.yaml"/>
+    
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        
+        <param name="robot_description"
+                value="$(command 'xacro $(var urdf_path)')"/>
+    </node>
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+        <arg name="gz_args" value="empty.sdf -r"/>
+    </include>
+
+    <node pkg="ros_gz_sim" exec="create" args="-topic robot_description">
+        
+    </node>
+
+    <node pkg="ros_gz_bridge" exec="parameter_bridge">
+        <param name="config_file" value="$(var gazeebo_config_path)"/>
+    </node>
+    
+    <node pkg="rviz2" exec="rviz2" output="screen"
+        args="-d $(var rviz_config_path)">  
+    </node>
+    
 </launch>
 ```
