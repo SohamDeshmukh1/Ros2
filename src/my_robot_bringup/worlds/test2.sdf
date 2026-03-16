@@ -3,7 +3,7 @@
     <physics name='1ms' type='ignored'>
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1</real_time_factor>
-      <real_time_update_rate>1000</real_time_update_rate>
+      <real_time_update_rate>200</real_time_update_rate>
     </physics>
     <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
     <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'/>
@@ -97,7 +97,63 @@
         </inertial>
         <enable_wind>false</enable_wind>
       </link>
-      <pose>0.27730441268751982 -4.2767453133647209 -5.257407068333259e-07 1.8044880070560115e-07 -5.252553725617739e-08 5.2200941419559416e-05</pose>
+      <pose>0.84649130613358481 -3.1904776367854808 -4.0395764672997602e-07 -8.1438017372132606e-09 -8.1196924447478134e-08 3.9876109768775307e-12</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='ground_plane_1'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.800000012 0.800000012 0.800000012 1</ambient>
+            <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+            <specular>0.800000012 0.800000012 0.800000012 1</specular>
+          </material>
+        </visual>
+      </link>
+      <pose>0.64088641017053405 -3.8913117704558564 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='shelf_big_movai_1'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/engine/Downloads/shelf/meshes/shelf_big_movai.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/engine/Downloads/shelf/meshes/shelf_big_movai.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+      </link>
+      <pose>0.58967806469196604 3.2135221066242434 -3.7570682422406021e-07 -1.1576148452294031e-08 -7.620425998772754e-08 3.9869045637653473e-12</pose>
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
@@ -132,40 +188,14 @@
         </inertial>
         <enable_wind>false</enable_wind>
       </link>
-      <pose>-0.41064898143734074 1.1364734189531613 0.028732890932405188 6.8183273506726653e-10 -0.075590937734329122 0.00028806447524697831</pose>
-      <static>false</static>
-      <self_collide>false</self_collide>
-    </model>
-    <model name='shelf_big_movai_1'>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>file:///home/engine/Downloads/shelf/meshes/shelf_big_movai.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>file:///home/engine/Downloads/shelf/meshes/shelf_big_movai.dae</uri>
-            </mesh>
-          </geometry>
-        </collision>
-      </link>
-      <pose>-0.64012412808532781 3.5082984368971264 -3.7212850464466151e-09 -4.2232790350342036e-08 -2.7303670915976068e-10 0.0042319595272535737</pose>
+      <pose>2.2867830469170944 1.5893039874585424 0.0010332796611791219 6.7398186817964e-08 -0.082832795366782896 0.00026433604559295573</pose>
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>file:///home/engine/.gz/fuel/fuel.gazebosim.org/openrobotics/models/grey wall/3</uri>
-      <name>grey_wall</name>
-      <pose>9.7837896347045898 -0.51082497835159302 0 0 0 -1.5537451911111433</pose>
-    </include>
-    <include>
-      <uri>file:///home/engine/.gz/fuel/fuel.gazebosim.org/openrobotics/models/grey wall/3</uri>
-      <name>grey_wall_1</name>
-      <pose>-9.7140526525694 -0.24956500386666214 0 0 0 -1.5537500608963788</pose>
+      <uri>file:///home/engine/.gz/fuel/fuel.gazebosim.org/openrobotics/models/foodcourttable1/2</uri>
+      <name>FoodCourtTable1</name>
+      <pose>9.5195999145507812 0.19031046330928802 0 0 0 0</pose>
     </include>
     <light name='sun' type='directional'>
       <pose>0 0 10 0 0 0</pose>
