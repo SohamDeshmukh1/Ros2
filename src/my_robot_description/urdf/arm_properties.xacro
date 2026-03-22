@@ -12,10 +12,10 @@
     <material name="grey">
         <color rgba="1 0.65 0 1" />
     </material>
-
+<!-- left at setting up the joints origin -->
     <xacro:property name="box_length" value="0.1" /> <!--x-->
     <xacro:property name="box_width" value="0.1" />  <!--y-->
-    <xacro:property name="box_height" value="0.2" /> <!--z-->
+    <xacro:property name="box_height" value="0.02" /> <!--z-->
     <xacro:property name="box_mass" value="0.5" />   <!--box mass-->
     <xacro:property name="arm_width" value="0.02" />  <!--r-->
     <xacro:property name="arm_length" value="0.3" /> <!--h-->
