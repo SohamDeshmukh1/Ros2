@@ -8,17 +8,42 @@
     <material name="orange">
         <color rgba="1 0.65 0 1" />
     </material>
-    
+
     <material name="grey">
         <color rgba="1 0.65 0 1" />
-    </material>
-<!-- left at setting up the joints origin -->
-    <xacro:property name="box_length" value="0.1" /> <!--x-->
-    <xacro:property name="box_width" value="0.1" />  <!--y-->
-    <xacro:property name="box_height" value="0.02" /> <!--z-->
-    <xacro:property name="box_mass" value="0.5" />   <!--box mass-->
-    <xacro:property name="arm_width" value="0.02" />  <!--r-->
-    <xacro:property name="arm_length" value="0.3" /> <!--h-->
-    <xacro:property name="arm_mass" value="0.3" />   <!--cylinder mass-->
+    </material>    <!-- left at setting up the joints origin -->
+    <xacro:property name="box_length" value="0.1" />
+    <!--x-->
+    <xacro:property name="box_width" value="0.1" />
+    <!--y-->
+    <xacro:property name="box_height" value="0.02"/>
+    <!--z-->
+    <xacro:property name="box_mass" value="0.5" />
+    <!--box mass-->
+    <xacro:property name="arm_width" value="0.02" />
+    <!--r-->
+    <xacro:property name="arm_length" value="0.3" />
+    <!--h-->
+    <xacro:property name="arm_mass" value="0.3" />
+    <!--cylinder mass-->
+
+    <xacro:macro name="arm_interia" params="o_xyz o_rpy">
+        <inertial>
+            <mass value="${arm_mass}" />
+            <origin xyz="${o_xyz}" rpy="${o_rpy}" />
+            <inertia ixx="${(1.0/12.0)*arm_mass*(3*arm_width*arm_width + arm_length*arm_length)}" 
+                     iyy="${(1.0/12.0)*arm_mass*(3*arm_width*arm_width + arm_length*arm_length)}" 
+                     izz="${(1.0/2.0)*arm_mass*arm_width*arm_width}" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </xacro:macro>
+    <xacro:macro name="arm_base_interia" params="o_xyz o_rpy ">
+        <inertial>
+            <mass value="${box_mass}" />
+            <origin xyz="${o_xyz}" rpy="${o_rpy}" />
+            <inertia ixx="${(box_mass/12)*(box_width*box_width+box_height*box_height)}" 
+                     ixy="0" ixz="0" iyy="${(box_mass/12)*(box_length*box_length+box_height*box_height)}" 
+                     iyz="0" izz="${(box_mass/12)*(box_length*box_length+box_width*box_width)}" />
+        </inertial>
+    </xacro:macro>
 
 </robot>

@@ -14,6 +14,7 @@
                     <box size="${box_length} ${box_width} ${box_height}" />
                 </geometry>
             </collision>
+            <xacro:arm_base_interia o_rpy="0 0 ${box_height/2}" o_xyz="0 0 0" />
         </link>
         <link name="forearm_link">
             <visual>
@@ -29,6 +30,7 @@
                     <cylinder radius="${arm_width}" length="${arm_length}" />
                 </geometry>
             </collision>
+            <xacro:arm_interia o_rpy="0 0 0" o_xyz="0 0 ${arm_length/2}" />
         </link>
 
         <link name="hand_link">
@@ -45,6 +47,7 @@
                     <cylinder radius="${arm_width}" length="${arm_length}" />
                 </geometry>
             </collision>
+            <xacro:arm_interia o_rpy="0 0 0" o_xyz="0 0 ${arm_length/2}" />
         </link>
 
         <joint name="arm_base_link" type="revolute">
