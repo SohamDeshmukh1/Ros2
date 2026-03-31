@@ -93,5 +93,13 @@
         <origin xyz="${-base_length / 4.0} ${base_width / 2.0 + wheel_length/2} 0" rpy="0 0 0" />
         <!-- 0.15 is the length 0.225 is height 0 is XYZ respective to height of base -->
         <axis xyz="0 1 0"/>
+    </joint>   
+
+    <joint name="base_left_wheel" type="">
+        <parent link="base_link" />
+        <child link="left_wheel_link" />
+        <origin xyz="${-base_length / 4.0} ${base_width / 2.0 + wheel_length/2} 0" rpy="0 0 0" />
+        <!-- 0.15 is the length 0.225 is height 0 is XYZ respective to height of base -->
+        <axis xyz="0 1 0"/>
     </joint>
 </robot>

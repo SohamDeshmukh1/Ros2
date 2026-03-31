@@ -1,13 +1,15 @@
 Panels:
   - Class: rviz_common/Displays
-    Help Height: 85
+    Help Height: 138
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /Global Options1
+        - /Status1
         - /Grid1
         - /RobotModel1
       Splitter Ratio: 0.5
-    Tree Height: 374
+    Tree Height: 596
   - Class: rviz_common/Views
     Expanded:
       - /Current View1
@@ -52,7 +54,7 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_link:
+        base_arm_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -82,7 +84,7 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        base_link:
+        base_arm_link:
           Value: true
         forearm_link:
           Value: true
@@ -94,7 +96,7 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        base_link:
+        base_arm_link:
           forearm_link:
             hand_link:
               {}
@@ -103,7 +105,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: base_arm_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -115,35 +117,35 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 1.7000000476837158
+      Distance: 1.5810744762420654
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: -0.005547897890210152
+        Y: 0.05802612006664276
+        Z: 0.14394325017929077
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.33000001311302185
+      Pitch: 0.3200002610683441
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.5
+      Yaw: 4.604997634887695
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1003
+  Height: 1590
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd00000001000000000000020c00000381fc0200000002fb000000100044006900730070006c006100790073010000004800000214000000f300fffffffb0000000a00560069006500770073010000026300000166000000c500ffffff0000056d0000038100000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000001000000000000020c00000596fc0200000002fb000000100044006900730070006c0061007900730100000070000003500000018600fffffffb0000000a0056006900650077007301000003cc0000023a0000013800ffffff000009e80000059600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
-  Width: 1920
+  Width: 3072
   X: 0
-  Y: 40
+  Y: 64
