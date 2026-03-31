@@ -18,7 +18,7 @@
     <!--y-->
     <xacro:property name="box_height" value="0.02"/>
     <!--z-->
-    <xacro:property name="box_mass" value="0.5" />
+    <xacro:property name="box_mass" value="5.0" />
     <!--box mass-->
     <xacro:property name="arm_width" value="0.02" />
     <!--r-->
