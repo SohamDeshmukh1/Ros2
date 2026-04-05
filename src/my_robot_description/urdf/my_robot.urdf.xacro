@@ -4,16 +4,17 @@
     <xacro:include filename="common_properties.xacro" />
     <xacro:include filename="mobile_base.xacro" />
     <xacro:include filename="mobile_base_gazeebo.xacro" />
-    <xacro:include filename="arm.xacro" />
+    <!-- <xacro:include filename="arm.xacro" /> when i will need the arm i will enable this -->
     <xacro:include filename="camera.xacro" />
     <!-- the rpy works in radiance basically everything which works in degrees works in radiance -->
     <!-- Every Measurement is done in Meters and not CMs MM or Kms -->
 
-    <joint name="mesh_robot_arm_link" type="fixed">
+    <!-- <joint name="mesh_robot_arm_link" type="fixed">
         <parent link="base_link" />
         <child link="base_arm_link" />
         <origin xyz="0 0 ${base_height}" rpy="0 0 1.5708" />
         <axis xyz="0 0 0"/>
-    </joint>
+    </joint> 
+    this joint is also related to the arm of the robot-->
 
    </robot>
