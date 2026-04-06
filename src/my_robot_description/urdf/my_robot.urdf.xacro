@@ -6,6 +6,10 @@
     <xacro:include filename="mobile_base_gazeebo.xacro" />
     <!-- <xacro:include filename="arm.xacro" /> when i will need the arm i will enable this -->
     <xacro:include filename="camera.xacro" />
+    <xacro:include filename="mobile_base.ros2_control.xacro" />
+   
+   
+   
     <!-- the rpy works in radiance basically everything which works in degrees works in radiance -->
     <!-- Every Measurement is done in Meters and not CMs MM or Kms -->
 
@@ -15,6 +19,6 @@
         <origin xyz="0 0 ${base_height}" rpy="0 0 1.5708" />
         <axis xyz="0 0 0"/>
     </joint> 
-    this joint is also related to the arm of the robot-->
+    this joint is also related to the arm of-->
 
    </robot>

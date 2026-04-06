@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <robot name="mesh_robot" xmlns:xacro="https://www.ros.org/wiki/xacro">
+   <ros2_control name="MobileBaseHardwareInterface" type="system">
     <hardware>
-        <plugin> mock_components/GenericSystem</plugin>
+        <plugin>mock_components/GenericSystem</plugin>
         <param name="calculate_dynamics">true</param>
     </hardware>
     <joint name="base_right_wheel">
@@ -14,4 +15,5 @@
         <state_interface name="position"/>
         <state_interface name="velocity"/>
     </joint>
+   </ros2_control>
 </robot>
