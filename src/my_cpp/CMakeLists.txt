@@ -56,7 +56,15 @@ ament_target_dependencies(Turtle_Spawn rclcpp my_robot_interfaces)
 add_executable(Turtle_Controller src/Turtle_Controller.cpp)   
 ament_target_dependencies(Turtle_Controller rclcpp turtlesim geometry_msgs my_robot_interfaces)
 
+add_executable(Task1 src/task1.cpp)
+ament_target_dependencies(Task1 rclcpp my_robot_interfaces)
+
+add_executable(Task1_2 src/task1_2.cpp)
+ament_target_dependencies(Task1_2 rclcpp my_robot_interfaces)
+
 install(TARGETS
+  Task1
+  Task1_2
   Turtle_Spawn
   Turtle_Controller
   cpp_node 
